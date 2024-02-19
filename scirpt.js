@@ -12,15 +12,7 @@ function scrollSection() {
 
 const btn = document.querySelectorAll(".btn");
    
-// for(let i=0; i< btn.length; i++){
-//     const button = btn[i];
-    // console.log(button)
-    // button.addEventListener("click", function(){
-    //     // console.log("clicked")
-    //      // get the seat
-    //      var innerText = this.innerText;
-    //      console.log(innerText);  
-    // });
+
     btn.forEach(function(button) {
         
                
@@ -120,7 +112,7 @@ else{
 
 
 })
-
+// //next button 
 const updateButton = document.getElementById("updateDetails");
 const dialog = document.getElementById("my_modal_1");
 
@@ -140,4 +132,3 @@ updateButton.addEventListener("click", function() {
     }
 });
    
-// }
