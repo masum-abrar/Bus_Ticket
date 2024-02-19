@@ -94,15 +94,17 @@ if( inputField === "NEW15" || inputField === "Couple 20"){
 // input field gayebul hawa
    if(inputField === "NEW15" ){
     const discountPrice = document.getElementById('discount-price');
-    const discountAmount = totalPrice * 0.2;
-    // console.log(discountAmount)
-    discountPrice.innerText = discountAmount;
-   }
-   else if( inputField === "couple"){
-    const discountPrice = document.getElementById('discount-price');
     const discountAmount = totalPrice * 0.15;
+    const result =totalPrice - discountAmount;
     // console.log(discountAmount)
-    discountPrice.innerText = discountAmount;
+    discountPrice.innerText = result;
+   }
+   else if( inputField === "Couple 20"){
+    const discountPrice = document.getElementById('discount-price');
+    const discountAmount = totalPrice * 0.2 ;
+     const result =totalPrice - discountAmount;
+    // console.log(discountAmount)
+    discountPrice.innerText = result;
    }
 }
 else{
