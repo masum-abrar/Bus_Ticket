@@ -25,16 +25,18 @@ const btn = document.querySelectorAll(".btn");
         
                
         
-        button.addEventListener('click', function() {
-            
+        button.addEventListener('click',  function() {
+           
             const seat = this.innerText;
                 console.log(seat)
            
-            button.hasEventListener = true;
+            
            
             const seatTittle = document.getElementById('seat-tittle');
             const SelectedSeatCount = seatTittle.childElementCount;
             if(SelectedSeatCount < 4){
+                const SelectSeat = seatTittle.innerText.includes(seat);
+                if(SelectSeat === false){
                 button.style.backgroundColor = '#1DD100';
                 const p = document.createElement("p");
                 p.innerText =seat;
@@ -63,19 +65,24 @@ const btn = document.querySelectorAll(".btn");
     
                 const seatCount = document.getElementById('seat-count').innerText=count;
                
-                if(seatCount < 4){
-                    count ++;
-                }
+               
             }
-
-            
+            else{
+                alert("This Seat already filled. Please select another seat")
+            }
+            if(seatCount < 4){
+                count ++;
+            }
             else{
                 alert("You cannot booked more than 4 seat");
             }
-
+            
             const seatL = document.getElementById('seat-left').innerText=seatLeft;
             seatLeft --;
 
+            
+            }
+             
         });
     });
 
@@ -113,5 +120,24 @@ else{
 
 
 })
+
+const updateButton = document.getElementById("updateDetails");
+const dialog = document.getElementById("my_modal_1");
+
+
+function openCheck(dialog) {
+    if (dialog.open) {
+        console.log("Dialog open");
+    }
+}
+
+updateButton.addEventListener("click", function() {
+    if (totalPrice > 0) {
+        dialog.showModal();
+        openCheck(dialog);
+    } else {
+        alert("Purchase at least one  Ticket First");
+    }
+});
    
 // }
